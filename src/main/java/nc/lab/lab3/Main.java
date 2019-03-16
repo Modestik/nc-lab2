@@ -1,5 +1,6 @@
 package nc.lab.lab3;
 
+
 public class Main {
     /**
      * 1. Многопоточное пепемножение матриц
