@@ -12,29 +12,15 @@ public class Main {
         int colFirstMatrix = scanner.nextInt();
         int colSecondMatrix = scanner.nextInt();
 
-        long startTime = System.currentTimeMillis();
+        Matrix matrix = new Matrix(rowFirstMatrix, colFirstMatrix, colSecondMatrix);
 
-        //Первая (левая) матрица.
-        int[][] firstMatrix = new int[rowFirstMatrix][colFirstMatrix];
-        //Вторая (правая) матрица.
-        int[][] secondMatrix = new int[colFirstMatrix][colSecondMatrix];
-
-        //Заполнение матриц
-        Matrix.randomMatrix(firstMatrix);
-        System.out.println(Matrix.toStringMatrix(firstMatrix));
-        Matrix.randomMatrix(secondMatrix);
-        System.out.println(Matrix.toStringMatrix(secondMatrix));
-
-        //Добавление как ресурса
-        Matrix.setFirstMatrix(firstMatrix);
-        Matrix.setSecondMatrix(secondMatrix);
+        System.out.println(Matrix.toStringMatrix(matrix.getFirstMatrix()));
+        System.out.println(Matrix.toStringMatrix(matrix.getSecondMatrix()));
 
         //Результирующая матрица.
-        int[][] resultMatrix = Matrix.multiplyMatrix();
-        System.out.println(Matrix.toStringMatrix(resultMatrix));
+        matrix.multiplyMatrix();
+        System.out.println(Matrix.toStringMatrix(matrix.getResultMatrix()));
 
-        long timeSpent = System.currentTimeMillis() - startTime;
-        System.out.println("программа выполнялась " + timeSpent + " миллисекунд");
     }
 }
 
